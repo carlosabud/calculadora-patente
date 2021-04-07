@@ -1,0 +1,17 @@
+<div>
+  <form [formGroup]="calculatorForm">
+    <input
+      type="number"
+      placeholder
+      formControlName="price"
+      placeholder="Ingrese valor auto"
+    />
+  </form>
+</div>
+
+<div>
+  <p>Valor Auto: {{ calculatorForm.get("price")?.value | currency: "ARS " }}</p>
+  <p>Valor alicuota aplicada: {{ alicuota }}</p>
+  <p>Valor cuota anual: {{ yearlyAmount | currency: "ARS " }}</p>
+  <p>Valor cuota bimestral: {{ bimonthlyAmount | currency: "ARS " }}</p>
+</div>
